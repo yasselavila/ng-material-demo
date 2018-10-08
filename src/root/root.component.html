@@ -1,0 +1,25 @@
+<header>
+  <h1 class="app-title"
+      style="text-align: center;">NgMaterial Demo</h1>
+  <div class="main-menu">
+    <a routerLink="/">Home</a> |
+    <a routerLink="/notes">Notes</a>
+  </div>
+</header>
+<main role="main">
+  <div id="content-container">
+    <!-- Content goes here -->
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<footer>
+  <div id="footer-container">
+    <hr>
+    <p class="copyright">
+      <abbr title="Copyright">&#169;</abbr> 2018,
+      <a rel="noopener"
+         target="_blank"
+         href="http://yasselavila.com/">Yassel Avila</a>.
+    </p>
+  </div>
+</footer>
