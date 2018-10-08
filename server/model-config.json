@@ -32,6 +32,6 @@
     "public": false
   },
   "Note": {
-    "dataSource": "db"
+    "dataSource": "mlab"
   }
 }
