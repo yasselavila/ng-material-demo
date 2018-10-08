@@ -171,9 +171,7 @@
     "rxjs-no-patched": {
       "severity": "error"
     },
-    "rxjs-no-wholesale": {
-      "severity": "error"
-    },
+    "rxjs-no-wholesale": false,
     "rxjs-finnish": {
       "severity": "error"
     }
