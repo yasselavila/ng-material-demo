@@ -2,5 +2,14 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mlab": {
+    "name": "mlab",
+    "connector": "mongodb",
+    "host": "ds235785.mlab.com",
+    "port": 35785,
+    "database": "jaimey89tweuie",
+    "username": "jaimey89",
+    "password": "89.jaimey"
   }
 }
