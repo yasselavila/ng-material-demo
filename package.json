@@ -11,9 +11,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "serve:static": "http-server dist/demo -o",
-    "client": "run-s build:prod serve:static",
     "server": "cross-env NODE_ENV=production node server/server.js",
-    "server:dev": "cross-env NODE_ENV=development node server/server.js"
+    "server:dev": "cross-env NODE_ENV=development node server/server.js",
+    "preview:serve": "run-p serve:static server",
+    "preview": "run-s build:prod preview:serve"
   },
   "dependencies": {
     "@abraham/reflection": "^0.4.2",
