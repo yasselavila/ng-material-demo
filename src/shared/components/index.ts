@@ -1,6 +1,13 @@
 import { Component, Type } from '@angular/core';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { CrudComponent } from './crud';
+import { NotFoundComponent } from './not-found';
+import { TableColumns, TableComponent } from './table';
 
-export { NotFoundComponent };
+export { TableComponent, CrudComponent, NotFoundComponent };
+export { TableColumns };
 
-export const SHARED_COMPONENTS: Type<Component | any>[] = [NotFoundComponent];
+export const SHARED_COMPONENTS: Type<Component | any>[] = [
+  TableComponent,
+  CrudComponent,
+  NotFoundComponent
+];

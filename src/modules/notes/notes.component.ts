@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Note, NotesService } from '../../shared';
+import { NotesService, TableColumns } from '../../shared';
 
 @Component({
   selector: 'app-notes-page',
@@ -8,16 +7,10 @@ import { Note, NotesService } from '../../shared';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent {
-  public data$: Observable<Note[]> = this.dataSource.getList();
+  public tableColumns: TableColumns = {
+    title: 'Title',
+    content: 'Content'
+  };
 
-  public constructor(public dataSource: NotesService) {}
-
-  public create(): void {
-    this.dataSource.create({ title: 'Example', content: 'Lola' }).subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (err) => console.error('ERROR', err)
-    );
-  }
+  public constructor(public notesService: NotesService) {}
 }
