@@ -7,6 +7,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatPaginatorModule,
+  MatProgressSpinnerModule,
   MatSidenavModule,
   MatSortModule,
   MatTableModule,
@@ -14,6 +15,7 @@ import {
 } from '@angular/material';
 
 export const MATERIAL_MODULES: any[] = [
+  MatProgressSpinnerModule,
   MatGridListModule,
   MatCardModule,
   MatMenuModule,
