@@ -6,7 +6,8 @@
     ],
     "mixins": [
       "./server/common/mixins",
-      "./common/mixins"
+      "./common/mixins",
+      "../node_modules/loopback-paginator/lib"
     ]
   },
   "User": {

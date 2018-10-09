@@ -8,5 +8,8 @@
     "content": {
       "type": "string"
     }
+  },
+  "mixins": {
+    "Paginator": true
   }
 }
