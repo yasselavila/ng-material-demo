@@ -28,15 +28,26 @@ export class ApiEndpoint<T> {
     return headers;
   }
 
-  // TODO
-  protected get(path: string): Observable<T> {
-    return this.http.get<T>(`${API_URL}/${path}`, {
+  public getList(): Observable<T[]> {
+    return this.http.get<T[]>(this.url(), {
       headers: this.getHeaders()
     });
   }
 
   public create(data: T): Observable<T> {
     return this.http.post<T>(this.url(), data, {
+      headers: this.getHeaders()
+    });
+  }
+
+  public update(id: string, data: T): Observable<T> {
+    return this.http.patch<T>(this.url(id), data, {
+      headers: this.getHeaders()
+    });
+  }
+
+  public delete(id: string): Observable<T> {
+    return this.http.delete<T>(this.url(id), {
       headers: this.getHeaders()
     });
   }

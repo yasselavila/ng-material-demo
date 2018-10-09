@@ -1,3 +1,28 @@
 :host {
   // Styles for the host element
+
+  /deep/ mat-card {
+    margin: 0 0 10px 0;
+
+    mat-card-header {
+      .mat-card-header-text {
+        width: 100%;
+        margin-left: 0 !important;
+      }
+
+      button {
+        float: right;
+      }
+    }
+
+    mat-card-content {
+      clear: both;
+    }
+  }
+
+  .table-container {
+    mat-spinner {
+      margin: 10px auto;
+    }
+  }
 }

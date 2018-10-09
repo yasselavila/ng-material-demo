@@ -1,4 +1,40 @@
-<h2>Notes!</h2>
-...
+<mat-card class="mat-elevation-z2">
+  <mat-card-header>
+    <mat-card-title>Notes</mat-card-title>
+    <button mat-raised-button
+            color="primary"
+            (click)="create()">
+      <mat-icon>note_add</mat-icon>
+      Create
+    </button>
+  </mat-card-header>
+  <mat-card-content>
 
-<button (click)="create()">Create!</button>
+    <div class="table-container">
+      <ng-template #loading>
+        <mat-spinner></mat-spinner>
+      </ng-template>
+
+      <table *ngIf="data$ | async as data; else loading">
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let item of data">
+          <td [innerHTML]="item.title"></td>
+          <td [innerHTML]="item.content"></td>
+          <td>
+            <button>
+              <mat-icon>create</mat-icon>
+            </button>
+            <button>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </mat-card-content>
+</mat-card>
