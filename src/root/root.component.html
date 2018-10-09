@@ -1,6 +1,5 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
   <mat-sidenav #drawer
-               class="sidenav"
                fixedInViewport="true"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -16,14 +15,14 @@
         Home
       </a>
       <a mat-list-item
-         routerLink="notes/">
-        <mat-icon>home</mat-icon>
+         routerLink="/notes">
+        <mat-icon>speaker_notes</mat-icon>
         Notes editor
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="default"
+    <mat-toolbar color="primary"
                  class="mat-elevation-z2">
       <button type="button"
               aria-label="Toggle sidenav"
@@ -36,7 +35,9 @@
     </mat-toolbar>
 
     <main role="main">
-      <router-outlet></router-outlet>
+      <perfect-scrollbar>
+        <router-outlet></router-outlet>
+      </perfect-scrollbar>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

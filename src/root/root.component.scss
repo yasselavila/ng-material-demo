@@ -1,16 +1,22 @@
 :host {
-  /* Styles for the host element */
+  min-height: 100%;
 
-  .sidenav-container {
+  mat-sidenav-container {
     height: 100%;
-  }
 
-  .sidenav {
-    width: 260px;
-    box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2)
-  }
+    mat-sidenav {
+      width: 260px;
+      box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
 
-  main {
-    padding: 20px;
+      mat-icon {
+        margin-right: 10px !important;
+      }
+    }
+
+    mat-sidenav-content {
+      main {
+        padding: 20px;
+      }
+    }
   }
 }
