@@ -3,8 +3,8 @@
     "name": "db",
     "connector": "memory"
   },
-  "mlab": {
-    "name": "mlab",
+  "mongodb": {
+    "name": "mongodb",
     "connector": "mongodb",
     "host": "ds235785.mlab.com",
     "port": 35785,
