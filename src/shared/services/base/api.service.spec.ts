@@ -1,12 +1,12 @@
 import { async, TestBed } from '@angular/core/testing';
-import { ApiService } from './api.service';
+import { ApiEndpoint } from './api-endpoint';
 
-describe('Service: Api', () => {
-  let service: ApiService;
+describe('Base Service: Api-Endpoint', () => {
+  let service: ApiEndpoint;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ApiService]
+      providers: [ApiEndpoint]
     });
   }));
 

@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Note } from '../../models';
 import { SharedModule } from '../../shared.module';
-import { ApiService } from '../api/api.service';
+import { ApiEndpoint } from '../base/api-endpoint';
 
 @Injectable({ providedIn: SharedModule })
-export class NotesService {
-  public constructor(private apiService: ApiService) {}
-
-  public findAll(): any[] {
-    //
-    return [];
-  }
+export class NotesService extends ApiEndpoint<Note> {
+  protected endpoint: string = '/Notes';
 }
