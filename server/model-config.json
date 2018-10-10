@@ -32,7 +32,10 @@
     "dataSource": "db",
     "public": false
   },
-  "Note": {
+  "pages": {
+    "dataSource": "mongodb"
+  },
+  "blog-posts": {
     "dataSource": "mongodb"
   }
 }

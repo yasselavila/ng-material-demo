@@ -1,0 +1,20 @@
+{
+  "name": "blog-posts",
+  "mixins": {
+    "Paginator": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "lead": {
+      "type": "string",
+      "required": false
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

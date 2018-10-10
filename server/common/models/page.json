@@ -1,5 +1,8 @@
 {
-  "name": "Note",
+  "name": "pages",
+  "mixins": {
+    "Paginator": true
+  },
   "properties": {
     "title": {
       "type": "string",
@@ -8,8 +11,5 @@
     "content": {
       "type": "string"
     }
-  },
-  "mixins": {
-    "Paginator": true
   }
 }
