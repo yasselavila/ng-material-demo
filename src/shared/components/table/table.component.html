@@ -14,12 +14,12 @@
     <mat-cell *matCellDef="let row">
       <button mat-icon-button
               matTooltip="Edit"
-              (click)="onUpdate(row.id)">
+              (click)="onUpdate(row)">
         <mat-icon>edit</mat-icon>
       </button>
       <button mat-icon-button
               matTooltip="Delete"
-              (click)="onDelete(row.id)">
+              (click)="onDelete(row)">
         <mat-icon>delete_forever</mat-icon>
       </button>
     </mat-cell>

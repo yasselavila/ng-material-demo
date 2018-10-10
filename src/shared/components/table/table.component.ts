@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { DataSource } from '../../services';
 import { TableColumns } from './columns';
@@ -20,6 +28,12 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort)
   public sort: MatSort;
+
+  @Output()
+  public update: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output()
+  public delete: EventEmitter<any> = new EventEmitter<any>();
 
   @Input()
   public set dataSource(value: DataSource<any>) {
@@ -60,11 +74,11 @@ export class TableComponent implements OnInit, AfterViewInit {
     this._dsHandler.loadData();
   }
 
-  public onUpdate(id: string): void {
-    // this._ds.delete(id).subscribe(() => console.log('Deleted: ', id));
+  public onUpdate(item: any): void {
+    this.update.emit(item);
   }
 
-  public onDelete(id: string): void {
-    this._ds.delete(id).subscribe(() => console.log('Deleted: ', id));
+  public onDelete(item: any): void {
+    this.delete.emit(item);
   }
 }
