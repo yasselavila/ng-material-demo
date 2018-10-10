@@ -9,6 +9,7 @@ import { BlogPostsService, TableColumns } from '../../shared';
 export class BlogPostsComponent {
   public tableColumns: TableColumns = {
     title: 'Title',
+    lead: 'Lead',
     content: 'Content'
   };
 
