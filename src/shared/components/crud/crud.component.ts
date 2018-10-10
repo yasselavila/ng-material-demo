@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { Form } from '@angular/forms';
 import { DataSource } from '../../services';
 import { TableColumns } from '../table';
@@ -9,6 +9,9 @@ import { TableColumns } from '../table';
   styleUrls: ['./crud.component.scss']
 })
 export class CrudComponent {
+  @HostBinding('title')
+  public titleBinding: string = '';
+
   @Input()
   public title: string;
 
