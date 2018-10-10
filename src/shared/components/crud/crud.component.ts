@@ -1,7 +1,7 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { DataSource } from '../../services';
-import { TableColumns } from '../table';
+import { TableColumns, TableComponent } from '../table';
 import { FormFields } from './form/fields';
 import { CrudFormComponent } from './form/form.component';
 
@@ -13,6 +13,9 @@ import { CrudFormComponent } from './form/form.component';
 export class CrudComponent {
   @HostBinding('title')
   public titleBinding: string = '';
+
+  @ViewChild(TableComponent)
+  public table: TableComponent;
 
   @Input()
   public title: string;
@@ -49,14 +52,22 @@ export class CrudComponent {
 
   public create(): void {
     this.displayDialog(null, (result) => {
-      console.log('Create: ', result);
-      // this.dataSource.create(result).subscribe((res: any) => console.log('Create: Done!'));
+      this.dataSource.create(result).subscribe((res: any) => this.table.refresh());
     });
   }
 
-  public update(): void {
-    this.displayDialog(null, (result) => {
-      this.dataSource.create(result).subscribe((res: any) => console.log('Create: Done!'));
+  public update(item: any): void {
+    this.displayDialog({ ...item }, (result: any) => {
+      const entity: any = {
+        ...result,
+        id: item.id
+      };
+
+      this.dataSource.update(item.id, entity).subscribe((res: any) => this.table.refresh());
     });
+  }
+
+  public delete(item: any): void {
+    this.dataSource.delete(item.id).subscribe((res: any) => this.table.refresh());
   }
 }

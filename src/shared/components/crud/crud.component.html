@@ -13,7 +13,9 @@
 
     <app-table #table
                [columns]="tableColumns"
-               [dataSource]="dataSource">
+               [dataSource]="dataSource"
+               (update)="update($event)"
+               (delete)="delete($event)">
     </app-table>
 
   </mat-card-content>
