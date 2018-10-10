@@ -1,13 +1,14 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { SharedModule } from '../../shared.module';
+import { DataSource, ListOptions } from './datasource';
 
 const API_URL: string = environment.api.baseUrl;
 
 @Injectable({ providedIn: SharedModule })
-export class ApiEndpoint<T> {
+export class ApiEndpoint<T> implements DataSource<T> {
   protected endpoint: string = '/';
 
   public constructor(private http: HttpClient) {}
@@ -28,8 +29,23 @@ export class ApiEndpoint<T> {
     return headers;
   }
 
-  public getList(): Observable<T[]> {
+  public findAll(options?: ListOptions): Observable<T[]> {
+    const params: HttpParams = new HttpParams();
+
+    if (options) {
+      if (options.pageNumber) {
+        params.set('page', String(options.pageNumber));
+      }
+    }
+
     return this.http.get<T[]>(this.url(), {
+      headers: this.getHeaders(),
+      params: params
+    });
+  }
+
+  public findOne(id: string): Observable<T> {
+    return this.http.get<T>(this.url(id), {
       headers: this.getHeaders()
     });
   }

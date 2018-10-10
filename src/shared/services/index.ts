@@ -1,2 +1,2 @@
-export { ApiEndpoint } from './base/api-endpoint';
+export { DataSource, ListOptions } from './base';
 export { NotesService } from './notes/notes.service';
