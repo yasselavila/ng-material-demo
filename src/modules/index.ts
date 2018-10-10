@@ -1,9 +1,13 @@
 import { NgModule, Type } from '@angular/core';
+import { BlogPostsModule } from './blog-posts';
 import { HomeModule } from './home';
 import { NotFoundModule } from './not-found';
+import { PagesModule } from './pages';
 
 export {
   HomeModule,
+  PagesModule,
+  BlogPostsModule,
   /* WARNING: Must be the last!!! */
   NotFoundModule
 };

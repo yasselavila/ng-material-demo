@@ -1,2 +1,3 @@
 export { DataSource, ListOptions } from './base';
-export { NotesService } from './notes/notes.service';
+export { BlogPostsService } from './blog-posts/blog-posts.service';
+export { PagesService } from './pages/pages.service';

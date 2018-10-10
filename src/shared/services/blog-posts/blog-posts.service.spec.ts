@@ -1,12 +1,12 @@
 import { async, TestBed } from '@angular/core/testing';
-import { NotesService } from './notes.service';
+import { BlogPostsService } from './blog-posts.service';
 
-describe('Service: Notes', () => {
-  let service: NotesService;
+describe('Service: Blog-posts', () => {
+  let service: BlogPostsService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [NotesService]
+      providers: [BlogPostsService]
     });
   }));
 

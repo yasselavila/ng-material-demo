@@ -1,4 +1,4 @@
-export interface Note {
+export interface Page {
   title: string;
   content: string;
 }

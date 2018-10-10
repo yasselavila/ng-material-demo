@@ -8,8 +8,12 @@ export const ROOT_ROUTES: Routes = [
     loadChildren: '../modules/home/home.module#HomeModule'
   },
   {
-    path: 'notes',
-    loadChildren: '../modules/notes/notes.module#NotesModule'
+    path: 'blog-posts',
+    loadChildren: '../modules/blog-posts/blog-posts.module#BlogPostsModule'
+  },
+  {
+    path: 'pages',
+    loadChildren: '../modules/pages/pages.module#PagesModule'
   },
   /* WARNING: Must be the last!!! */
   {
