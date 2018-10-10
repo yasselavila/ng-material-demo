@@ -1,19 +1,24 @@
-<div>
-  <h3>Please fill the form</h3>
+<h2 mat-dialog-title>Please fill the form</h2>
 
+<mat-dialog-content>
   <perfect-scrollbar class="form-container">
 
-    //
+    <formly-form [form]="_formGroup"
+                 [fields]="_formlyFields"
+                 [model]="_model">
+    </formly-form>
 
   </perfect-scrollbar>
-</div>
+</mat-dialog-content>
 
-<button mat-raised-button
-        color="primary"
-        (click)="closeDialog()">
-  Ok
-</button>
-<button mat-button
-        (click)="closeDialog()">
-  Cancel
-</button>
+<mat-dialog-actions>
+  <button mat-raised-button
+          color="primary"
+          (click)="onSave()">
+    Ok
+  </button>
+  <button mat-button
+          (click)="closeDialog()">
+    Cancel
+  </button>
+</mat-dialog-actions>

@@ -29,6 +29,8 @@
     "@angular/platform-browser": "~7.0.0-rc.0",
     "@angular/platform-browser-dynamic": "~7.0.0-rc.0",
     "@angular/router": "~7.0.0-rc.0",
+    "@ngx-formly/core": "^4.7.2",
+    "@ngx-formly/material": "^4.7.2",
     "compression": "^1.0.3",
     "core-js": "^2.5.4",
     "cors": "^2.5.2",

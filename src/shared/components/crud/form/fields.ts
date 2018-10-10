@@ -1,6 +1,7 @@
 export interface FormField {
-  title?: string;
+  label?: string;
   type?: string;
+  required?: boolean;
 }
 
 export interface FormFields {

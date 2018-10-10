@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { SHARED_COMPONENTS } from './components';
 import { MATERIAL_MODULES } from './material-modules';
@@ -13,8 +15,10 @@ import { MATERIAL_MODULES } from './material-modules';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyMaterialModule,
     PerfectScrollbarModule,
     ...MATERIAL_MODULES
   ],
@@ -22,6 +26,8 @@ import { MATERIAL_MODULES } from './material-modules';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
+    FormlyModule,
+    FormlyMaterialModule,
     PerfectScrollbarModule,
     ...MATERIAL_MODULES,
     ...SHARED_COMPONENTS

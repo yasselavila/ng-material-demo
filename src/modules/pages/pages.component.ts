@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PagesService, TableColumns } from '../../shared';
+import { FormFields, PagesService, TableColumns } from '../../shared';
 
 @Component({
   selector: 'app-pages-page',
@@ -10,6 +10,11 @@ export class PagesComponent {
   public tableColumns: TableColumns = {
     title: 'Title',
     content: 'Content'
+  };
+
+  public formFields: FormFields = {
+    title: 'Title',
+    content: { label: 'Content', type: 'textarea' }
   };
 
   public constructor(public pagesService: PagesService) {}
