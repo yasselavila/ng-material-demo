@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Form } from '@angular/forms';
+import { DataSource } from '../../services';
 import { TableColumns } from '../table';
 
 @Component({
@@ -15,7 +16,7 @@ export class CrudComponent {
   public tableColumns: TableColumns;
 
   @Input()
-  public dataSource: string;
+  public dataSource: DataSource<any>;
 
   @Input()
   public form: Form;
