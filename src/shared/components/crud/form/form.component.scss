@@ -1,0 +1,10 @@
+:host {
+  // Styles for the host element
+
+  .form-container {
+    margin: 10px 0 20px 0;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

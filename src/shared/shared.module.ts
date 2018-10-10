@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { SHARED_COMPONENTS } from './components';
@@ -12,6 +13,7 @@ import { MATERIAL_MODULES } from './material-modules';
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     HttpClientModule,
     PerfectScrollbarModule,
     ...MATERIAL_MODULES
@@ -19,6 +21,7 @@ import { MATERIAL_MODULES } from './material-modules';
   exports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     PerfectScrollbarModule,
     ...MATERIAL_MODULES,
     ...SHARED_COMPONENTS

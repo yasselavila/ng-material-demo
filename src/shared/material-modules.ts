@@ -2,6 +2,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
   MatGridListModule,
   MatIconModule,
   MatListModule,
@@ -29,5 +30,6 @@ export const MATERIAL_MODULES: any[] = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatDialogModule
 ];

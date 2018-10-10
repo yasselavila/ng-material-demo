@@ -56,11 +56,15 @@ export class TableComponent implements OnInit, AfterViewInit {
     setTimeout(() => this._dsHandler.loadData());
   }
 
-  public update(id: string): void {
+  public refresh(): void {
+    this._dsHandler.loadData();
+  }
+
+  public onUpdate(id: string): void {
     // this._ds.delete(id).subscribe(() => console.log('Deleted: ', id));
   }
 
-  public delete(id: string): void {
+  public onDelete(id: string): void {
     this._ds.delete(id).subscribe(() => console.log('Deleted: ', id));
   }
 }
