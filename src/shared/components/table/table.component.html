@@ -6,7 +6,7 @@
   <ng-container *ngFor="let columnName of _columnNames"
                 [matColumnDef]="columnName">
     <mat-header-cell *matHeaderCellDef>{{ columns[columnName] }}</mat-header-cell>
-    <mat-cell *matCellDef="let row"><span [innerText]="row[columnName]"></span></mat-cell>
+    <mat-cell *matCellDef="let row"><span [innerText]="row[columnName] || ''"></span></mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="_crud_controls_">
