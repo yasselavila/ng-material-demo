@@ -1,0 +1,27 @@
+<mat-table #table
+           aria-label="Elements"
+           [dataSource]="_dsHandler">
+
+  <ng-container *ngFor="let columnName of _columnNames"
+                [matColumnDef]="columnName">
+    <mat-header-cell *matHeaderCellDef>{{ columns[columnName] }}</mat-header-cell>
+    <mat-cell *matCellDef="let row"><span [innerText]="row[columnName]"></span></mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="_columnNames"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: _columnNames;"></mat-row>
+</mat-table>
+
+<ng-template [ngIf]="_dsHandler">
+  <div *ngIf="_dsHandler.loading$ | async"
+       class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<mat-paginator #paginator
+               [length]="0"
+               [pageIndex]="0"
+               [pageSize]="15"
+               [pageSizeOptions]="[]">
+</mat-paginator>
