@@ -30,11 +30,11 @@ export class ApiEndpoint<T> implements DataSource<T> {
   }
 
   public findAll(options?: ListOptions): Observable<T[]> {
-    const params: HttpParams = new HttpParams();
+    let params: HttpParams = new HttpParams();
 
     if (options) {
       if (options.pageNumber) {
-        params.set('page', String(options.pageNumber));
+        params = params.append('page', String(options.pageNumber));
       }
     }
 

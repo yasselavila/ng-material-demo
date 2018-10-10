@@ -1,5 +1,5 @@
 import { DataSource as CdkDataSource } from '@angular/cdk/collections';
-import { MatPaginator, MatSort } from '@angular/material';
+import { MatPaginator, MatSort, PageEvent } from '@angular/material';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, finalize, take } from 'rxjs/operators';
 import { DataSource, ListOptions } from '../../services';
@@ -31,7 +31,7 @@ export class DataSourceHandler extends CdkDataSource<any> {
 
   public connect(): Observable<any[]> {
     this.connected = true;
-    this.paginator.page.subscribe((pageIndex: number) => this.loadData(pageIndex));
+    this.paginator.page.subscribe((event: PageEvent) => this.loadData(event.pageIndex));
 
     return this.dataSubject.asObservable();
   }
