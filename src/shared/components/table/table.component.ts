@@ -22,16 +22,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   public sort: MatSort;
 
   @Input()
-  public set columns(value: TableColumns) {
-    this._columns = value;
-    this._columnNames = Object.keys(value);
-  }
-
-  public get columns(): TableColumns {
-    return this._columns;
-  }
-
-  @Input()
   public set dataSource(value: DataSource<any>) {
     this._ds = value;
 
@@ -44,11 +34,33 @@ export class TableComponent implements OnInit, AfterViewInit {
     return this._ds;
   }
 
+  @Input()
+  public set columns(value: TableColumns) {
+    this._columns = value;
+    this._columnNames = Object.keys(value);
+  }
+
+  public get columns(): TableColumns {
+    return this._columns;
+  }
+
+  public get _columnsToDisplay(): string[] {
+    return [...this._columnNames, '_crud_controls_'];
+  }
+
   public ngOnInit(): void {
     this._dsHandler = new DataSourceHandler(this.paginator, this.sort, this._ds);
   }
 
   public ngAfterViewInit(): void {
     setTimeout(() => this._dsHandler.loadData());
+  }
+
+  public update(id: string): void {
+    // this._ds.delete(id).subscribe(() => console.log('Deleted: ', id));
+  }
+
+  public delete(id: string): void {
+    this._ds.delete(id).subscribe(() => console.log('Deleted: ', id));
   }
 }

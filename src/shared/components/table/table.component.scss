@@ -1,7 +1,31 @@
 :host {
   .spinner-container {
     mat-spinner {
-      margin: 10px auto;
+      margin: 20px auto;
+    }
+  }
+
+  /* CRUD actions */
+
+  .mat-column-_crud_controls_ {
+    flex: 0 0 80px !important;
+    white-space: unset !important;
+
+    [mat-icon-button] {
+      display: none;
+      opacity: .5;
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+  }
+
+  mat-row:hover {
+    .mat-column-_crud_controls_ {
+      [mat-icon-button] {
+        display: inline-block;
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 <mat-table #table
            aria-label="Elements"
+           [attr.title]=""
            [dataSource]="_dsHandler">
 
   <ng-container *ngFor="let columnName of _columnNames"
@@ -8,8 +9,24 @@
     <mat-cell *matCellDef="let row"><span [innerText]="row[columnName]"></span></mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="_columnNames"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: _columnNames;"></mat-row>
+  <ng-container matColumnDef="_crud_controls_">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button
+              matTooltip="Edit"
+              (click)="delete(row.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button
+              matTooltip="Delete"
+              (click)="delete(row.id)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="_columnsToDisplay"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: _columnsToDisplay;"></mat-row>
 </mat-table>
 
 <ng-template [ngIf]="_dsHandler">
