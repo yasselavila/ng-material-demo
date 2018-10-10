@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run serve",
+    "serve": "ng serve",
+    "serve:prod": "ng serve --prod -o",
     "build": "ng build",
     "build:prod": "ng build --prod",
     "test": "ng test",
@@ -13,8 +15,7 @@
     "serve:static": "http-server dist/demo -o",
     "server": "cross-env NODE_ENV=production node server/server.js",
     "server:dev": "cross-env NODE_ENV=development node server/server.js",
-    "preview:serve": "run-p serve:static server",
-    "preview": "run-s build:prod preview:serve"
+    "preview": "run-p server serve:prod"
   },
   "dependencies": {
     "@abraham/reflection": "^0.4.2",

@@ -14,8 +14,8 @@ export class ApiEndpoint<T> implements DataSource<T> {
   public constructor(private http: HttpClient) {}
 
   protected url(path: string = ''): string {
-    const ret: string = `${API_URL}/${this.endpoint}/${path}`;
-    return ret.replace(/\/+/g, '/').replace(/\/$/, '');
+    const p: string = `${this.endpoint}/${path}`.replace(/\/+/g, '/').replace(/\/$/, '');
+    return `${API_URL}${p}`;
   }
 
   protected getHeaders(): HttpHeaders {
