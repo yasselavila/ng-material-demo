@@ -11,7 +11,8 @@ import {
   MatSidenavModule,
   MatSortModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 
 export const MATERIAL_MODULES: any[] = [
@@ -27,5 +28,6 @@ export const MATERIAL_MODULES: any[] = [
   MatListModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatTooltipModule
 ];
