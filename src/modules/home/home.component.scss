@@ -1,15 +1,18 @@
 :host {
   // Styles for the host element
 
-  mat-card {
-    margin: 0 20px 20px 0;
-    max-width: 200px;
+  /deep/ mat-card {
+    margin: 0 0 2px 0;
+    width: 98%;
 
     .big-icon {
-      padding: 20px 0 5px 50px;
+      padding: 5px 0;
+      text-align: center;
 
       mat-icon {
         font-size: 84px;
+        width: 84px;
+        height: 84px;
       }
     }
   }

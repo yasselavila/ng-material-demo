@@ -1,31 +1,41 @@
-<mat-card class="mat-elevation-z2">
-  <mat-card-header>
-    <mat-card-title>Pages</mat-card-title>
-  </mat-card-header>
-  <div class="big-icon">
-    <mat-icon>speaker_notes</mat-icon>
-  </div>
-  <mat-card-actions>
-    <a mat-button
-       routerLink="/pages">
-      <mat-icon>open_in_browser</mat-icon>
-      Ir
-    </a>
-  </mat-card-actions>
-</mat-card>
+<mat-grid-list cols="3"
+               gutterSize="20px">
+  <mat-grid-tile>
 
-<mat-card class="mat-elevation-z2">
-  <mat-card-header>
-    <mat-card-title>Blog posts</mat-card-title>
-  </mat-card-header>
-  <div class="big-icon">
-    <mat-icon>speaker_notes</mat-icon>
-  </div>
-  <mat-card-actions>
-    <a mat-button
-       routerLink="/blog-posts">
-      <mat-icon>open_in_browser</mat-icon>
-      Ir
-    </a>
-  </mat-card-actions>
-</mat-card>
+    <mat-card class="mat-elevation-z2">
+      <mat-card-header>
+        <mat-card-title>Pages</mat-card-title>
+      </mat-card-header>
+      <div class="big-icon">
+        <mat-icon>description</mat-icon>
+      </div>
+      <mat-card-actions>
+        <a mat-button
+           routerLink="/pages">
+          <mat-icon>open_in_browser</mat-icon>
+          Ir
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+    <mat-card class="mat-elevation-z2">
+      <mat-card-header>
+        <mat-card-title>Blog posts</mat-card-title>
+      </mat-card-header>
+      <div class="big-icon">
+        <mat-icon>note_add</mat-icon>
+      </div>
+      <mat-card-actions>
+        <a mat-button
+           routerLink="/blog-posts">
+          <mat-icon>open_in_browser</mat-icon>
+          Ir
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-grid-tile>
+</mat-grid-list>
